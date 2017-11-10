@@ -1,16 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RomanNumeralsKata
 {
-    internal class RomanNumeralConverter
+    public class RomanNumeralConverter
     {
-        public RomanNumeralConverter()
+        private Dictionary<int, Char> romanNumeralsDictionary = new Dictionary<int, char>()
+        {
+            {1, 'I'}
+            
+        };
+    
+
+    public RomanNumeralConverter()
         {
         }
 
         public Char ConvertNumber(int i)
         {
-            throw new NotImplementedException();
+            Char romanNumeral;
+            romanNumeralsDictionary.TryGetValue(i, out romanNumeral);
+            return romanNumeral;
         }
     }
 }
