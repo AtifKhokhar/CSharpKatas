@@ -9,8 +9,9 @@ namespace RomanNumeralsKata
     {
         private Dictionary<int, string> romanNumeralsDictionary = new Dictionary<int, string>()
         {
-            {1, "I"}
-            
+            {1, "I"},
+            {5, "V"},
+            {10, "X"}
         };
     
 
@@ -20,25 +21,28 @@ namespace RomanNumeralsKata
 
         public string ConvertNumber(int arabicNumber)
         {
-            string romanNumeral;
-            romanNumeralsDictionary.TryGetValue(1, out romanNumeral);
+            string romanNumeral = "";
+            romanNumeralsDictionary.TryGetValue(arabicNumber, out romanNumeral);
             romanNumeral = this.AppendIToNumeral(arabicNumber, romanNumeral);
             return romanNumeral;
         }
 
         private string AppendIToNumeral(int arabicNumber, string numeral)
         {
-            StringBuilder builder = new StringBuilder();
-            if(arabicNumber > 1 && arabicNumber <= 3)
-            {
-                for (int i = 0; i < arabicNumber; i++)
-                    return builder.Append(numeral).ToString();
+            if(string.IsNullOrEmpty(numeral)){numeral = "I";}
 
-            }
-            return numeral;
+            if (arabicNumber <= 3)
                 
-        }
+                for (int i = 1; i < arabicNumber; i++)
+            { 
+                numeral = string.Concat(numeral,"I");
+                
+            }
 
+
+            return numeral;
+
+        }
 
     }
 }

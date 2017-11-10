@@ -13,11 +13,16 @@ namespace RomanNumeralsKata
         [TestCase(1,"I")]
         [TestCase(2, "II")]
         [TestCase(3, "III")]
+       // [TestCase(4, "IV")]
+        [TestCase(5, "V")]
+       // [TestCase(6, "VI")]
+       // [TestCase(7, "VII")]
+      //  [TestCase(8, "VIII")]
+        [TestCase(10, "X")]
         public void ConvertNormalNumberToRomanNumeral(int input, string expectedOutput)
         {
             //arrange
             var sut = new RomanNumeralConverter();
-            expectedOutput = "I";
             //act
             var actualOutput = sut.ConvertNumber(input);
             //assert
