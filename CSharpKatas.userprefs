@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{D9F6DA74-47B0-470A-9E98-7E8B4A9153E8}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RomanNumeralsKata0/RomanNumeralConverterShould.cs">
+    <Files>
+      <File FileName="RomanNumeralsKata0/RomanNumeralConverterShould.cs" Line="25" Column="10" />
+      <File FileName="RomanNumeralsKata0/RomanNumeralConverter.cs" Line="40" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="CSharpKatas" expanded="True">
+            <Node name="RomanNumeralsKata" expanded="True">
+              <Node name="RomanNumeralsKata" expanded="True">
+                <Node name="RomanNumeralConverterShould" expanded="True">
+                  <Node name="ConvertNormalNumberToRomanNumeral" expanded="True">
+                    <Node name="ConvertNormalNumberToRomanNumeral(2,&quot;II&quot;)" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.RomanNumeralsKata PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/atifkhokhar/Documents/Git/CSharpKatas/RomanNumeralsKata0/RomanNumeralConverter.cs" relfile="RomanNumeralsKata0/RomanNumeralConverter.cs" line="29" column="1" />
+      <Breakpoint file="/Users/atifkhokhar/Documents/Git/CSharpKatas/RomanNumeralsKata0/RomanNumeralConverterShould.cs" relfile="RomanNumeralsKata0/RomanNumeralConverterShould.cs" line="22" column="37" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

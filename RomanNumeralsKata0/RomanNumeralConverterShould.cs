@@ -10,16 +10,19 @@ namespace RomanNumeralsKata
     [TestFixture]
     public class RomanNumeralConverterShould
     {
-        [Test]
-        public void ConvertNormalNumberToRomanNumeral()
+        [TestCase(1,"I")]
+        [TestCase(2, "II")]
+        [TestCase(3, "III")]
+        public void ConvertNormalNumberToRomanNumeral(int input, string expectedOutput)
         {
             //arrange
             var sut = new RomanNumeralConverter();
-            var expectedOutput = 'I';
+            expectedOutput = "I";
             //act
-            var actualOutput = sut.ConvertNumber(1);
+            var actualOutput = sut.ConvertNumber(input);
             //assert
             Assert.That(actualOutput.Equals(expectedOutput));
         }
+
     }
 }
