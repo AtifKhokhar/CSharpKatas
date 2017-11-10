@@ -24,6 +24,7 @@ namespace RomanNumeralsKata
             string romanNumeral = "";
             romanNumeralsDictionary.TryGetValue(arabicNumber, out romanNumeral);
             romanNumeral = this.AppendIToNumeral(arabicNumber, romanNumeral);
+            romanNumeral = this.AppendSubtractiveNotation(arabicNumber, romanNumeral);
             return romanNumeral;
         }
 
@@ -39,6 +40,20 @@ namespace RomanNumeralsKata
             }
             return numeral;
         }
+
+        private string AppendSubtractiveNotation(int arabicNumber, string numeral)
+        {
+            if(arabicNumber % 10 == 4)
+            {
+                numeral = "IV";
+            }
+            if(arabicNumber % 10 == 9)
+            {
+                numeral = "IX";
+            }
+            return numeral;
+        }
+
 
         private string DecideBaseNumeral(int arabicNumber)
         {
