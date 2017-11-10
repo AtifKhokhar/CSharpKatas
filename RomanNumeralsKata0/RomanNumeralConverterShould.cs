@@ -15,10 +15,13 @@ namespace RomanNumeralsKata
         [TestCase(3, "III")]
        // [TestCase(4, "IV")]
         [TestCase(5, "V")]
-       // [TestCase(6, "VI")]
-       // [TestCase(7, "VII")]
-      //  [TestCase(8, "VIII")]
+        [TestCase(6, "VI")]
+        [TestCase(7, "VII")]
+        [TestCase(8, "VIII")]
         [TestCase(10, "X")]
+        [TestCase(11, "XI")]
+        [TestCase(12, "XII")]
+        [TestCase(13, "XIII")]
         public void ConvertNormalNumberToRomanNumeral(int input, string expectedOutput)
         {
             //arrange

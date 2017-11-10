@@ -29,19 +29,29 @@ namespace RomanNumeralsKata
 
         private string AppendIToNumeral(int arabicNumber, string numeral)
         {
-            if(string.IsNullOrEmpty(numeral)){numeral = "I";}
+            if(string.IsNullOrEmpty(numeral)){numeral = DecideBaseNumeral(arabicNumber);}
 
-            if (arabicNumber <= 3)
-                
-                for (int i = 1; i < arabicNumber; i++)
+            var baseNumeralNumber = romanNumeralsDictionary.FirstOrDefault(x => x.Value == numeral).Key;
+            var appendCount = arabicNumber - baseNumeralNumber;
+            for (int i = 1; i <= appendCount; i++)
             { 
                 numeral = string.Concat(numeral,"I");
-                
+            }
+            return numeral;
+        }
+
+        private string DecideBaseNumeral(int arabicNumber)
+        {
+            if(arabicNumber <= 3) 
+            {
+                return "I";
             }
 
-
-            return numeral;
-
+            if(arabicNumber >= 4 && arabicNumber < 9)
+            {
+                return "V";
+            }
+            return "X";
         }
 
     }
