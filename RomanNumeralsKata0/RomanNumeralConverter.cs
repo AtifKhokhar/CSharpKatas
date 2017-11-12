@@ -23,8 +23,15 @@ namespace RomanNumeralsKata
         {
             string romanNumeral = "";
             romanNumeralsDictionary.TryGetValue(arabicNumber, out romanNumeral);
-            romanNumeral = this.AppendIToNumeral(arabicNumber, romanNumeral);
-            romanNumeral = this.AppendSubtractiveNotation(arabicNumber, romanNumeral);
+            if (arabicNumber % 10 == 4 || arabicNumber % 10 == 9)
+            {
+                romanNumeral = this.AppendSubtractiveNotation(arabicNumber, romanNumeral);
+
+            }
+            else
+            {
+                romanNumeral = this.AppendIToNumeral(arabicNumber, romanNumeral);
+            }
             return romanNumeral;
         }
 
@@ -43,13 +50,15 @@ namespace RomanNumeralsKata
 
         private string AppendSubtractiveNotation(int arabicNumber, string numeral)
         {
+            if (string.IsNullOrEmpty(numeral)) { numeral = DecideBaseNumeral(arabicNumber); }
+
             if(arabicNumber % 10 == 4)
             {
-                numeral = "IV";
+                numeral += "IV";
             }
             if(arabicNumber % 10 == 9)
             {
-                numeral = "IX";
+                numeral += "IX";
             }
             return numeral;
         }
@@ -62,11 +71,15 @@ namespace RomanNumeralsKata
                 return "I";
             }
 
-            if(arabicNumber >= 4 && arabicNumber < 9)
+            if(arabicNumber > 4 && arabicNumber < 9)
             {
                 return "V";
             }
-            return "X";
+            if (arabicNumber >= 10)
+            {
+                return "X";
+            }
+            return null;
         }
 
     }
