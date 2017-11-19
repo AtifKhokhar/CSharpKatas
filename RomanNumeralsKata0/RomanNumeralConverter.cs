@@ -28,6 +28,10 @@ namespace RomanNumeralsKata
                 romanNumeral = this.AppendSubtractiveNotation(arabicNumber, romanNumeral);
 
             }
+            else if (arabicNumber % 10 == 5)
+            {
+                romanNumeral =  this.AppendVToNumeral(arabicNumber, romanNumeral);
+            }
             else
             {
                 romanNumeral = this.AppendIToNumeral(arabicNumber, romanNumeral);
@@ -59,6 +63,18 @@ namespace RomanNumeralsKata
             if(arabicNumber % 10 == 9)
             {
                 numeral += "IX";
+            }
+
+            return numeral;
+        }
+
+        private string AppendVToNumeral(int arabicNumber, string numeral)
+        {
+            if (string.IsNullOrEmpty(numeral)) { numeral = DecideBaseNumeral(arabicNumber); }
+
+            if (arabicNumber != 5)
+            {
+                numeral += "V";
             }
             return numeral;
         }
