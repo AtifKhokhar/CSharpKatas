@@ -30,7 +30,11 @@ namespace RomanNumeralsKata
             }
             else if (arabicNumber % 10 == 5)
             {
-                romanNumeral =  this.AppendVToNumeral(arabicNumber, romanNumeral);
+                romanNumeral = this.AppendVToNumeral(arabicNumber, romanNumeral);
+            }
+            else if (arabicNumber >= 20)
+            {
+                romanNumeral = this.AppendXToNumeral(arabicNumber, romanNumeral);
             }
             else
             {
@@ -75,6 +79,17 @@ namespace RomanNumeralsKata
             if (arabicNumber != 5)
             {
                 numeral += "V";
+            }
+            return numeral;
+        }
+
+        private string AppendXToNumeral(int arabicNumber, string numeral)
+        {
+            if (string.IsNullOrEmpty(numeral)) { numeral = DecideBaseNumeral(arabicNumber); }
+
+            if (arabicNumber != 10)
+            {
+                numeral += "X";
             }
             return numeral;
         }
